@@ -25,9 +25,11 @@ skill-name/
 
 ## PR Rules (enforced by CI)
 
-The `label-ready-skill.yml` workflow validates every PR:
+The `label-ready-skill.yml` workflow validates **external listing PRs only** (i.e., PRs that touch only `README.md`). Hosted skill PRs (new folders) bypass this validator — they are reviewed manually.
 
-- **External listing PRs**: only `README.md` may change — no other files.
+Rules enforced for external listing PRs:
+
+- Only `README.md` may change — any other changed file fails CI.
 - New bullets must link to an **external URL** (not `composio.dev` or `anthropic.com`).
 - No crypto/web3/blockchain/NFT keywords anywhere in added lines.
 - New skills must be placed in **alphabetical order** within their category section.
